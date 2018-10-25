@@ -1,6 +1,18 @@
 <resources>
     <string name="app_name">Football Club Wiki</string>
 
+    <string-array name="club_id">
+        <item>bufc</item>
+        <item>barfc</item>
+        <item>rmfc</item>
+        <item>bmfc</item>
+        <item>mcfc</item>
+        <item>mufc</item>
+        <item>cfc</item>
+        <item>amfc</item>
+        <item>afc</item>
+    </string-array>
+
     <string-array name="club_name">
         <item>Bali United FC</item>
         <item>Barcelona FC</item>
@@ -24,4 +36,6 @@
         <item>@drawable/img_acm</item>
         <item>@drawable/img_arsenal</item>
     </array>
+
+    <item name="toolbar" type="id" />
 </resources>
