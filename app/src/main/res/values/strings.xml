@@ -1,7 +1,8 @@
 <resources>
-    <string name="app_name">Kotlin Academy</string>
+    <string name="app_name">Football Club Wiki</string>
 
     <string-array name="club_name">
+        <item>Bali United FC</item>
         <item>Barcelona FC</item>
         <item>Real Madrid FC</item>
         <item>Bayern Munchen FC</item>
@@ -13,6 +14,7 @@
     </string-array>
 
     <array name="club_image">
+        <item>@drawable/img_baliunited</item>
         <item>@drawable/img_barca</item>
         <item>@drawable/img_madrid</item>
         <item>@drawable/img_bayern</item>
