@@ -2,6 +2,7 @@ package web.barayuda.firstkotlin
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -32,6 +33,7 @@ class RecyclerViewAdapter(private val context: Context, private val items: List<
             items.image?.let { Picasso.get().load(it).into(image) }
             itemView.setOnClickListener {
                 listener(items)
+                Log.d("ITEMS: ", items.toString())
             }
         }
     }

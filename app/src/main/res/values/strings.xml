@@ -37,5 +37,16 @@
         <item>@drawable/img_arsenal</item>
     </array>
 
-    <item name="toolbar" type="id" />
+    <string-array name="club_desc">
+        <item>Bali United Football Club is a professional football club based in Gianyar Regency, Bali, Indonesia that competes in Liga 1, an official competition that replaced Indonesia Super League. Nicknamed Serdadu Tridatu (Tridatu Warriors), the club was founded as Putra Samarinda in 1989, changed its name to Bali United in 2015, and moved its current stadium to Kapten I Wayan Dipta Stadium in the same year.</item>
+        <item>Barcelona FC was founded in 1899 by a group of Swiss, English and Catalan footballers led by Joan Gamper, the club has become a symbol of Catalan culture and Catalanism.</item>
+        <item>Real Madrid FC was founded on 6 March 1902 as the Madrid Football Club, the club has traditionally worn a white home kit since inception. </item>
+        <item>FC Bayern was founded in 1900 by 11 football players, led by Franz John. Although Bayern won its first national championship in 1932, the club was not selected for the Bundesliga at its inception in 1963. </item>
+        <item>Manchester City FC, commonly known as City, is a football club in Manchester, England. Founded in 1880 as St. Mark\'s (West Gorton), it became Ardwick Association Football Club in 1887 and Manchester City in 1894.</item>
+        <item>Manchester United FC, commonly known as Man. United or simply United, is a professional football club based in Old Trafford, Greater Manchester, England, that competes in the Premier League, the top flight of English football.</item>
+        <item>Chelsea FC is a professional football club in London, England, that competes in the Premier League. Founded in 1905, the club\'s home ground since then has been Stamford Bridge.</item>
+        <item>A.C. Milan or simply Milan, is a professional football club in Milan, Italy, founded in 1899.</item>
+        <item>Arsenal FC is a professional football club based in Islington, London, England, that plays in the Premier League, the top flight of English football. </item>
+    </string-array>
+
 </resources>
