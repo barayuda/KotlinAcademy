@@ -3,6 +3,9 @@ package web.barayuda.footballclub
 import com.google.gson.Gson
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
+import web.barayuda.footballclub.Api.ApiRespository
+import web.barayuda.footballclub.Model.Team
+import web.barayuda.footballclub.Model.TeamResponse
 
 class MainPresenter(private val view: MainView,
                     private val apiRespository: ApiRespository,

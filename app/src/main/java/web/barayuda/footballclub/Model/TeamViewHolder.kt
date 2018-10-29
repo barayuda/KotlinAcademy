@@ -1,4 +1,4 @@
-package web.barayuda.footballclub
+package web.barayuda.footballclub.Model
 
 import android.support.v7.widget.RecyclerView
 import android.view.View
@@ -6,6 +6,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.squareup.picasso.Picasso
 import org.jetbrains.anko.find
+import web.barayuda.footballclub.R
 
 class TeamViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 

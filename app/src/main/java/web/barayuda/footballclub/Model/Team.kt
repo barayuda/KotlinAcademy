@@ -1,4 +1,4 @@
-package web.barayuda.footballclub
+package web.barayuda.footballclub.Model
 
 import com.google.gson.annotations.SerializedName
 

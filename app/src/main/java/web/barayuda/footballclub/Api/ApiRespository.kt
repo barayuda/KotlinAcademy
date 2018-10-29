@@ -1,6 +1,7 @@
-package web.barayuda.footballclub
+package web.barayuda.footballclub.Api
 
 import android.net.Uri
+import web.barayuda.footballclub.BuildConfig
 import java.net.URL
 
 class ApiRespository {
