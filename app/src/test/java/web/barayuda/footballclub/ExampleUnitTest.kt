@@ -1,4 +1,4 @@
-package web.barayuda.firstkotlin
+package web.barayuda.footballclub
 
 import org.junit.Test
 
