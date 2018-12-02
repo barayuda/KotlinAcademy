@@ -1,30 +1,33 @@
 package web.barayuda.footballclub
 
-import com.google.gson.Gson
-import org.jetbrains.anko.doAsync
-import org.jetbrains.anko.uiThread
-import web.barayuda.footballclub.Api.ApiRespository
-import web.barayuda.footballclub.Api.TheSportDBApi
-import web.barayuda.footballclub.Model.TeamResponse
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.schedulers.Schedulers
+import web.barayuda.footballclub.Model.MatchDataInterface
 
-class MainPresenter(private val view: MainView,
-                    private val apiRepository: ApiRespository,
-                    private val gson: Gson) {
+class MainPresenter(val mainInterface: MainInterface.View, val matchDataInterface: MatchDataInterface) : MainInterface.Presenter{
 
-    fun getTeamList(league: String?) {
-        view.showLoading()
-        doAsync {
-            val data = gson.fromJson(apiRepository
-                .doRequest(TheSportDBApi.getTeams(league)),
-                TeamResponse::class.java
-            )
+    val compositeDisposable = CompositeDisposable()
 
-            uiThread {
-                view.hideLoading()
-                view.showTeamList(data.teams)
-            }
-        }
+    override fun getFootballUpcomingData() {
+        mainInterface.showLoading()
+        compositeDisposable.add(matchDataInterface.getUpcomingMatch("4328")
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribeOn(Schedulers.io())
+            .subscribe{
+                mainInterface.displayFootballMatch(it.events)
+                mainInterface.hideLoading()
+            })
     }
 
+    override fun getFootballMatchData() {
+        mainInterface.showLoading()
+        compositeDisposable.add(matchDataInterface.getFootballMatch("4328")
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribeOn(Schedulers.io())
+            .subscribe{
+                mainInterface.displayFootballMatch(it.events)
+                mainInterface.hideLoading()
+            })
+    }
 }
-
