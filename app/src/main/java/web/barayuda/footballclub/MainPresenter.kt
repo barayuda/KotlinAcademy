@@ -4,18 +4,18 @@ import com.google.gson.Gson
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
 import web.barayuda.footballclub.Api.ApiRespository
-import web.barayuda.footballclub.Model.Team
+import web.barayuda.footballclub.Api.TheSportDBApi
 import web.barayuda.footballclub.Model.TeamResponse
 
 class MainPresenter(private val view: MainView,
-                    private val apiRespository: ApiRespository,
+                    private val apiRepository: ApiRespository,
                     private val gson: Gson) {
 
     fun getTeamList(league: String?) {
         view.showLoading()
         doAsync {
-            val data = gson.fromJson(apiRespository
-                .doRequest(ApiRespository.TheSportDBApi.getTeams(league)),
+            val data = gson.fromJson(apiRepository
+                .doRequest(TheSportDBApi.getTeams(league)),
                 TeamResponse::class.java
             )
 
@@ -28,8 +28,3 @@ class MainPresenter(private val view: MainView,
 
 }
 
-interface MainView {
-    fun showLoading()
-    fun hideLoading()
-    fun showTeamList(data: List<Team>)
-}

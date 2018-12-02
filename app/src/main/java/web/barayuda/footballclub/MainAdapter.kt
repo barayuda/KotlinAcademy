@@ -7,25 +7,21 @@ import android.widget.LinearLayout
 import org.jetbrains.anko.*
 import web.barayuda.footballclub.Model.Team
 import web.barayuda.footballclub.Model.TeamViewHolder
+import web.barayuda.footballclub.R.id.team_badge
+import web.barayuda.footballclub.R.id.team_name
 
-class MainAdapter (private val teams: List<Team>)
+class MainAdapter(private val teams: List<Team>)
     : RecyclerView.Adapter<TeamViewHolder>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TeamViewHolder {
-        return TeamViewHolder(
-            TeamUI().createView(
-                AnkoContext.create(
-                    parent.context,
-                    parent
-                )
-            )
-        )
-    }
 
-    override fun getItemCount(): Int = teams.size
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TeamViewHolder {
+        return TeamViewHolder(TeamUI().createView(AnkoContext.create(parent.context, parent)))
+    }
 
     override fun onBindViewHolder(holder: TeamViewHolder, position: Int) {
         holder.bindItem(teams[position])
     }
+
+    override fun getItemCount(): Int = teams.size
 
 }
 
@@ -38,20 +34,21 @@ class TeamUI : AnkoComponent<ViewGroup> {
                 orientation = LinearLayout.HORIZONTAL
 
                 imageView {
-                    id = R.id.team_badge
-                }.lparams {
+                    id = team_badge
+                }.lparams{
                     height = dip(50)
                     width = dip(50)
                 }
 
                 textView {
-                    id = R.id.team_name
+                    id = team_name
                     textSize = 16f
-                }.lparams {
+                }.lparams{
                     margin = dip(15)
                 }
 
             }
         }
     }
+
 }
